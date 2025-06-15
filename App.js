@@ -16,6 +16,15 @@ export default function App() {
     console.warn("contact me pressed");
     Linking.openURL("mailto:vadim@notjust.dev");
   };
+  const renderIcons = () => {
+    return (
+      <View style={{ flexDirection: "row", gap: 10, marginVertical: 10 }}>
+        <FontAwesome6 name="github" size={24} color="black" />
+        <FontAwesome6 name="x-twitter" size={24} color="black" />
+        <FontAwesome6 name="at" size={24} color="black" />
+      </View>
+    );
+  };
   return (
     <SafeAreaProvider>
       <SafeAreaView edges={["bottom"]}>
@@ -42,11 +51,7 @@ export default function App() {
               Vadim Savin
             </Text>
             <Text>Founder of notJust.dev</Text>
-            <View style={{ flexDirection: "row", marginVertical: 10, gap: 10 }}>
-              <FontAwesome6 name="github" size={24} color="black" />
-              <FontAwesome6 name="x-twitter" size={24} color="black" />
-              <FontAwesome6 name="at" size={24} color="black" />
-            </View>
+            {renderIcons()}
             <Button title="Contact me" onPress={contactMe} />
             <Text style={{ padding: 10, fontSize: 16 }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
