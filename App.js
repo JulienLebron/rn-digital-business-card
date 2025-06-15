@@ -1,8 +1,20 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ScrollView,
+  Button,
+  Linking,
+} from "react-native";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 
 export default function App() {
+  const contactMe = () => {
+    console.warn("contact me pressed");
+    Linking.openURL("mailto:vadim@notjust.dev");
+  };
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -30,6 +42,7 @@ export default function App() {
           <FontAwesome6 name="x-twitter" size={24} color="black" />
           <FontAwesome6 name="at" size={24} color="black" />
         </View>
+        <Button title="Contact me" onPress={contactMe} />
         <Text style={{ padding: 10, fontSize: 16 }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Nam
