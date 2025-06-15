@@ -12,6 +12,11 @@ import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
+  const links = {
+    github: "SavinVadim1312",
+    email: "vadim@notjust.dev",
+    x: "VadimNotJustDev",
+  };
   const contactMe = () => {
     console.warn("contact me pressed");
     Linking.openURL("mailto:vadim@notjust.dev");
@@ -19,9 +24,9 @@ export default function App() {
   const renderIcons = () => {
     return (
       <View style={{ flexDirection: "row", gap: 10, marginVertical: 10 }}>
-        <FontAwesome6 name="github" size={24} color="black" />
-        <FontAwesome6 name="x-twitter" size={24} color="black" />
-        <FontAwesome6 name="at" size={24} color="black" />
+        {links.github && <FontAwesome6 name="github" size={24} color="black" />}
+        {links.x && <FontAwesome6 name="x-twitter" size={24} color="black" />}
+        {links.email && <FontAwesome6 name="at" size={24} color="black" />}
       </View>
     );
   };
